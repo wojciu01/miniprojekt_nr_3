@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180505 11:06:32.988" generator="Robot 3.0 (Python 2.7.5 on linux2)">
+<suite source="/home/tester/miniprojekt3/projekt3.robot" id="s1" name="Projekt3">
+<test id="s1-t1" name="Go To Website And Find Job Position">
+<kw type="setup" name="Open Browser To Login Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${WEBSITE}</arg>
+</arguments>
+<msg timestamp="20180505 11:06:33.122" level="INFO">Opening browser 'firefox' to base url 'https://www.olx.pl/'</msg>
+<status status="PASS" endtime="20180505 11:06:44.790" starttime="20180505 11:06:33.121"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180505 11:06:45.246" starttime="20180505 11:06:44.790"></status>
+</kw>
+<status status="PASS" endtime="20180505 11:06:45.246" starttime="20180505 11:06:33.121"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//a[@data-id="4"]</arg>
+</arguments>
+<msg timestamp="20180505 11:06:45.247" level="INFO">Clicking element '//a[@data-id="4"]'.</msg>
+<status status="PASS" endtime="20180505 11:06:45.675" starttime="20180505 11:06:45.247"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>//a[@href='https://www.olx.pl/praca/informatyka/']</arg>
+</arguments>
+<msg timestamp="20180505 11:06:45.675" level="INFO">Clicking link '//a[@href='https://www.olx.pl/praca/informatyka/']'.</msg>
+<status status="PASS" endtime="20180505 11:06:46.037" starttime="20180505 11:06:45.675"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id="search-text"]</arg>
+<arg>${VALID_JOB}</arg>
+</arguments>
+<msg timestamp="20180505 11:06:46.038" level="INFO">Typing text 'QA' into text field '//input[@id="search-text"]'</msg>
+<status status="PASS" endtime="20180505 11:06:51.052" starttime="20180505 11:06:46.038"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>//input[@id="cityField"]</arg>
+<arg>${VALID_CITY}</arg>
+</arguments>
+<msg timestamp="20180505 11:06:51.053" level="INFO">Typing text 'Przemyśl' into text field '//input[@id="cityField"]'</msg>
+<status status="PASS" endtime="20180505 11:06:51.805" starttime="20180505 11:06:51.053"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>//input[@type="submit"]</arg>
+</arguments>
+<msg timestamp="20180505 11:06:51.806" level="INFO">Clicking button '//input[@type="submit"]'.</msg>
+<status status="PASS" endtime="20180505 11:06:56.231" starttime="20180505 11:06:51.805"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>//span[@class='marker']</arg>
+</arguments>
+<assign>
+<var>${RESULT}</var>
+</assign>
+<msg timestamp="20180505 11:06:56.922" level="INFO">${RESULT} = Sprawdź poprawność albo spróbuj bardziej ogólnego zapytania</msg>
+<status status="PASS" endtime="20180505 11:06:56.922" starttime="20180505 11:06:56.232"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${RESULT}</arg>
+<arg>Sprawdź poprawność albo spróbuj bardziej ogólnego zapytania</arg>
+</arguments>
+<status status="PASS" endtime="20180505 11:06:56.923" starttime="20180505 11:06:56.923"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180505 11:06:56.999" starttime="20180505 11:06:56.924"></status>
+</kw>
+<status status="PASS" endtime="20180505 11:06:56.999" critical="yes" starttime="20180505 11:06:33.120"></status>
+</test>
+<status status="PASS" endtime="20180505 11:06:57.001" starttime="20180505 11:06:32.990"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Projekt3" pass="1">Projekt3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
